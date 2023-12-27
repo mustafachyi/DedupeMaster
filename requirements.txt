@@ -4,3 +4,4 @@ flask_bootstrap
 flask_socketio
 stripe
 gunicorn
+eventlet
