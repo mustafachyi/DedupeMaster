@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.pool import NullPool
 from flask_bootstrap import Bootstrap
 from flask_socketio import SocketIO, emit
 from threading import Thread
@@ -11,6 +12,7 @@ import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///keys.db'
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'poolclass': NullPool}
 db = SQLAlchemy(app)
 Bootstrap(app)
 socketio = SocketIO(app)
