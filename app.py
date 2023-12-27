@@ -46,7 +46,7 @@ def create_random_stripe_key(prefix, length):
     return prefix + ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(length))
 
 def generate_and_check_keys():
-    verified_key = os.getenv('STRIPE_API_KEY')
+    verified_key = 'sk_test_4eC39HqLyjWDarjtT1zdp7dc'
     if not validate_stripe_key(verified_key):
         print("Unable to validate the API. Please check your verified key.")
         return
