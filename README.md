@@ -10,7 +10,7 @@ Dedupe Master is a simple web application that helps you remove duplicates from 
 
 ## Usage
 
-1. Open `test.html` in your web browser.
+1. Open `index.html` in your web browser.
 2. Paste your list into the text area.
 3. Select your desired options.
 4. Click the "Submit" button to remove duplicates from your list.
@@ -20,7 +20,7 @@ Dedupe Master is a simple web application that helps you remove duplicates from 
 
 This project uses plain HTML, CSS, and JavaScript. To make changes, simply edit the files in a text editor and refresh the browser to see your changes.
 
-- HTML structure is in `test.html`.
+- HTML structure is in `index.html`.
 - Styles are in `styles.css`.
 - JavaScript functionality is in `script.js`.
 
