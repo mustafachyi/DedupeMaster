@@ -1,48 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang=en>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dedupe Master</title>
-    <meta name="description" content="Dedupe Master - Effortlessly remove duplicate lines by pasting them into the field, selecting options, and clicking Submit for instant results at the page bottom.">
-    <style>
-    body{font-family:Arial,sans-serif;margin:0;padding:0;background:#2b2b2b;color:#fff}.container,.intro{display:flex;flex-direction:column;gap:20px;max-width:800px;margin:20px auto;padding:20px;justify-content:center}.header{text-align:center;margin-bottom:20px;padding:10px}.header h1{font-size:2em;margin:0}.header p,.intro p{font-size:0.9em;margin:0}.form-group{margin-bottom:20px;position:relative}.form-control,.output{width:100%;padding:10px;border:1px solid #0077b6;border-radius:5px;height:200px;background:#1a1a1a;color:#fff;outline:none}.output{white-space:pre-line;word-wrap:break-word;overflow:auto}.btn{background:#0077b6;color:#fff;padding:10px 20px;border:none;border-radius:5px;cursor:pointer;margin-top:20px}.output-group{display:none}.checkbox-group{display:flex;flex-direction:column;align-items:flex-start;width:50%}.alert{color:red;display:none}.paste-btn{position:absolute;bottom:10px;right:10px;background:#0077b6;color:#fff;padding:5px;border:none;border-radius:50%;cursor:pointer;font-size:0.8em;width:30px;height:30px;line-height:20px;text-align:center;transition:background 0.3s}.paste-btn:hover{background:#00b4d8}@keyframes borderPulse{0%{border-color:#0077b6}50%{border-color:#00b4d8}100%{border-color:#0077b6}}
-    </style>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Dedupe Master</title>
+<meta name=description content="Dedupe Master - Effortlessly remove duplicate lines by pasting them into the field, selecting options, and clicking Submit for instant results at the page bottom.">
+<style>body{font-family:Arial,sans-serif;margin:0;padding:0;background:#2b2b2b;color:#fff}.container,.intro{display:flex;flex-direction:column;gap:20px;max-width:800px;margin:20px auto;padding:20px;justify-content:center}.header{text-align:center;margin-bottom:20px;padding:10px}.header h1{font-size:2em;margin:0}.header p,.intro p{font-size:.9em;margin:0}.form-group{margin-bottom:20px;position:relative}.form-control,.output{width:100%;padding:10px;border:1px solid #0077b6;border-radius:5px;height:200px;background:#1a1a1a;color:#fff;outline:0}.output{white-space:pre-line;word-wrap:break-word;overflow:auto}.btn{background:#0077b6;color:#fff;padding:10px 20px;border:none;border-radius:5px;cursor:pointer;margin-top:20px}.output-group{display:none}.checkbox-group{display:flex;flex-direction:column;align-items:flex-start;width:50%}.alert{color:red;display:none}.paste-btn{position:absolute;bottom:10px;right:10px;background:#0077b6;color:#fff;padding:5px;border:none;border-radius:50%;cursor:pointer;font-size:.8em;width:30px;height:30px;line-height:20px;text-align:center;transition:background .3s}.paste-btn:hover{background:#00b4d8}@keyframes borderPulse{0%{border-color:#0077b6}50%{border-color:#00b4d8}100%{border-color:#0077b6}}</style>
 </head>
 <body>
-    <div id="container">
-        <div class="intro" style="margin-bottom:20px;margin-top:20px;text-align:center">
-            <h1>Dedupe Master</h1>
-            <p>Remove duplicate lines effortlessly from your list. Simply paste the lines into the provided field, select your desired options, and click Submit. Keep in mind that processing an exceptionally large list may affect your computer's performance.</p>
-        </div>
-        <main class="container">
-            <section class="form-group">
-                <label for="masterlist">Paste your list here:</label>
-                <textarea id="masterlist" class="form-control"></textarea>
-                <button class="paste-btn">&#128203;</button>
-            </section>
-            <section class="checkbox-group">
-                <div class="form-group">
-                    <input type="checkbox" id="kpblanks">
-                    <label for="kpblanks">Keep blanks at line starts</label>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="caps">
-                    <label for="caps">Ignore capitals (results lower case)</label>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="sort">
-                    <label for="sort">Sort results</label>
-                </div>
-            </section>
-            <button class="btn">Submit</button>
-            <div id="alert" class="alert">Please enter some input.</div>
-            <div id="removed"></div>
-            <section class="form-group output-group">
-                <label for="output">Output (Double-click to copy):</label>
-                <textarea id="output" class="form-control"></textarea>
-            </section>
-        </main>
-    </div>
-    <script src="script.js" defer></script>
+<div id=container>
+<div class=intro style=margin-bottom:20px;margin-top:20px;text-align:center>
+<h1>Dedupe Master</h1>
+<p>Remove duplicate lines effortlessly from your list.</p>
+<p>Simply paste the lines into the provided field, select your desired options, and click Submit.</p>
+<p>Keep in mind that processing an exceptionally large list may affect your computer's performance.</p>
+</div>
+<main class=container>
+<section class=form-group>
+<label for=masterlist>Paste your list here:</label>
+<textarea id=masterlist class=form-control></textarea>
+<button class=paste-btn>&#128203;</button>
+</section>
+<section class=checkbox-group>
+<div class=form-group>
+<input type=checkbox id=kpblanks>
+<label for=kpblanks>Keep blanks at line starts</label>
+</div>
+<div class=form-group>
+<input type=checkbox id=caps>
+<label for=caps>Ignore capitals (results lower case)</label>
+</div>
+<div class=form-group>
+<input type=checkbox id=sort>
+<label for=sort>Sort results</label>
+</div>
+</section>
+<button class=btn>Submit</button>
+<div id=alert class=alert>Please enter some input.</div>
+<div id=removed></div>
+<section class="form-group output-group">
+<label for=output>Output (Double-click to copy):</label>
+<textarea id=output class=form-control></textarea>
+</section>
+</main>
+</div>
+<script src=script.js defer></script>
 </body>
 </html>
