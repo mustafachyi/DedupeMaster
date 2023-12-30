@@ -13,14 +13,18 @@ document.addEventListener('DOMContentLoaded', function() {
     output.addEventListener('click', copyOutput);
 
     function pasteInput() {
-        navigator.clipboard.readText()
-        .then(text => {
-            masterlist.value = text;
-        })
-        .catch(err => {
-            console.error('Failed to read clipboard contents: ', err);
-            alert.textContent = 'Failed to read clipboard contents.';
-            alert.style.display = "block";
+        navigator.permissions.query({name: "clipboard-read"}).then(result => {
+            if (result.state == "granted" || result.state == "prompt") {
+                navigator.clipboard.readText()
+                .then(text => {
+                    masterlist.value = text;
+                })
+                .catch(err => {
+                    console.error('Failed to read clipboard contents: ', err);
+                    alert.textContent = 'Failed to read clipboard contents.';
+                    alert.style.display = "block";
+                });
+            }
         });
     }
 
@@ -77,3 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
         outputGroup.style.display = "block";
     }
 });
+
+window.onload = function() {
+    masterlist.value = '';
+    output.textContent = '';
+    // Clear other input boxes as needed
+}
