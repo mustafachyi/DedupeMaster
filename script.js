@@ -13,18 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
     output.addEventListener('click', copyOutput);
 
     function pasteInput() {
-        navigator.permissions.query({name: "clipboard-read"}).then(result => {
-            if (result.state == "granted" || result.state == "prompt") {
-                navigator.clipboard.readText()
-                .then(text => {
-                    masterlist.value = text;
-                })
-                .catch(err => {
-                    console.error('Failed to read clipboard contents: ', err);
-                    alert.textContent = 'Failed to read clipboard contents.';
-                    alert.style.display = "block";
-                });
-            }
+        navigator.clipboard.readText()
+        .then(text => {
+            masterlist.value = text;
+        })
+        .catch(err => {
+            console.error('Failed to read clipboard contents: ', err);
+            alert.textContent = 'Failed to read clipboard contents.';
+            alert.style.display = "block";
         });
     }
 
