@@ -9,38 +9,40 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Dedupe Master</h1>
-        <p>Remove duplicate lines effortlessly from your list. Simply paste the lines into the provided field, select your desired options, and click Submit. Keep in mind that processing an exceptionally large list may affect your computer's performance.</p>
-    </header>
-    <main class="container">
-        <section class="form-group">
-            <label for="masterlist">Paste your list here:</label>
-            <textarea id="masterlist" class="form-control"></textarea>
-            <button class="paste-btn">&#128203;</button>
-        </section>
-        <section class="checkbox-group">
-            <div class="form-group">
-                <input type="checkbox" id="kpblanks">
-                <label for="kpblanks">Keep blanks at line starts</label>
-            </div>
-            <div class="form-group">
-                <input type="checkbox" id="caps">
-                <label for="caps">Ignore capitals (results lower case)</label>
-            </div>
-            <div class="form-group">
-                <input type="checkbox" id="sort">
-                <label for="sort">Sort results</label>
-            </div>
-        </section>
-        <button class="btn">Submit</button>
-        <div id="alert" class="alert">Please enter some input.</div>
-        <div id="removed"></div>
-        <section class="form-group output-group">
-            <label for="output">Output (Double-click to copy):</label>
-            <textarea id="output" class="form-control"></textarea>
-        </section>
-    </main>
+    <div id="container">
+        <div style="margin-bottom:20px;margin-top:20px;text-align:center">
+            <h1>Dedupe Master</h1>
+            <p>Remove duplicate lines effortlessly from your list. Simply paste the lines into the provided field, select your desired options, and click Submit. Keep in mind that processing an exceptionally large list may affect your computer's performance.</p>
+        </div>
+        <main class="container">
+            <section class="form-group">
+                <label for="masterlist">Paste your list here:</label>
+                <textarea id="masterlist" class="form-control"></textarea>
+                <button class="paste-btn">&#128203;</button>
+            </section>
+            <section class="checkbox-group">
+                <div class="form-group">
+                    <input type="checkbox" id="kpblanks">
+                    <label for="kpblanks">Keep blanks at line starts</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="caps">
+                    <label for="caps">Ignore capitals (results lower case)</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="sort">
+                    <label for="sort">Sort results</label>
+                </div>
+            </section>
+            <button class="btn">Submit</button>
+            <div id="alert" class="alert">Please enter some input.</div>
+            <div id="removed"></div>
+            <section class="form-group output-group">
+                <label for="output">Output (Double-click to copy):</label>
+                <textarea id="output" class="form-control"></textarea>
+            </section>
+        </main>
+    </div>
     <script src="script.js" defer></script>
 </body>
 </html>
